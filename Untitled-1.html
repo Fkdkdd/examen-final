@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Tasca Española</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #video-background {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+
+        #app {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop muted id="video-background">
+        <source src="https://www.club-caza.com/videos/torocomiendopaella.mp4#t=12,47" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="app">
+        <script type="text/babel">
+            function App() {
+                return (
+                    <div className="relative">
+                        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-between" style={{backgroundColor: 'rgba(0, 0, 0, 0.3)'}}>
+                            <div className="pt-4 px-6 flex justify-between items-center">
+                                <div className="text-white text-2xl font-bold">La Tasca Española</div>
+                                <div className="flex items-center">
+                                    <div className="text-white uppercase text-sm font-semibold tracking-wide cursor-pointer hover:text-gray-300 mr-6">Restaurantes <i className="fas fa-chevron-down ml-1"></i></div>
+                                    <div className="text-white uppercase text-sm font-semibold tracking-wide cursor-pointer hover:text-gray-300 mr-6">Agitar</div>
+                                    <div className="text-white uppercase text-sm font-semibold tracking-wide cursor-pointer hover:text-gray-300 mr-6">Sobre nosotros</div>
+                                    <div className="text-white text-lg cursor-pointer hover:text-gray-300 mr-4"><i className="fab fa-facebook-f"></i></div>
+                                    <div className="text-white text-lg cursor-pointer hover:text-gray-300 mr-4"><i className="fab fa-instagram"></i></div>
+                                    <div className="text-white uppercase text-sm font-semibold tracking-wide cursor-pointer hover:text-gray-300">ES <i className="fas fa-chevron-down ml-1"></i></div>
+                                </div>
+                            </div>
+                            <div className="pb-8 px-6 flex justify-center items-end">
+                                <div className="text-center">
+                                    <div className="text-white text-xs font-semibold tracking-widest mb-2">SINCE 1847</div>
+                                    <div className="text-white text-5xl font-bold tracking-wider">La Tasca Española</div>
+                                    <div className="text-white text-lg font-semibold tracking-wider">GRILL RESTAURANT</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                );
+            }
+
+            ReactDOM.render(<App />, document.getElementById('app'));
+        </script>
+    </div>
+</body>
+</html>
